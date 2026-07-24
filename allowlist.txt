@@ -1,0 +1,43 @@
+! Title: Curated Samsung + Google + Amazon Allowlist
+! Version: 1.0.0
+! Expires: 1 day
+
+@@||account.samsung.com^
+@@||auth.samsung.com^
+@@||samsung.com^
+@@||sec.samsung.com^
+@@||samsungcloud.com^
+@@||api.samsungcloud.com^
+@@||samsungapps.com^
+@@||galaxy.store^
+@@||vas.samsungapps.com^
+@@||update.samsung.com^
+@@||fota.samsungmobile.com^
+@@||findmymobile.samsung.com^
+@@||smartthings.com^
+@@||smartthings.net^
+@@||iot.samsung.com^
+@@||push.samsungosp.com^
+@@||samsungosp.com^
+@@||knox.com^
+@@||knoxapis.com^
+
+@@||googleapis.com^
+@@||gstatic.com^
+@@||googleusercontent.com^
+@@||android.com^
+@@||gvt1.com^
+@@||gvt2.com^
+@@||clients.google.com^
+@@||connectivitycheck.gstatic.com^
+@@||mtalk.google.com^
+@@||fcm.googleapis.com^
+@@||play.googleapis.com^
+@@||play.google.com^
+@@||dl.google.com^
+
+@@||amazon.com^
+@@||amazon.de^
+@@||amazonaws.com^
+@@||media-amazon.com^
+@@||alexa.amazon.com^
