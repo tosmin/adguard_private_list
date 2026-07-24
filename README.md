@@ -1,36 +1,17 @@
-# adguard_private_list
-adguard_private_list
-# AdGuard Curated Allowlists
+# AdGuard Curated Allowlist
 
-A curated allowlist for AdGuard Home that restores the functionality of:
+Minimal allowlist for:
 
 - Samsung Galaxy devices
 - Samsung Account
-- SmartThings
 - Galaxy Store
-- OTA updates
+- SmartThings
 - Google Play Services
-- Firebase Cloud Messaging
-- Android connectivity checks
-- Amazon Alexa
-- Amazon Fire devices
+- Firebase notifications
+- Amazon Alexa devices
 
-## Import into AdGuard Home
+## Installation
 
-Go to:
+Add this URL in:
 
-Filters → DNS allowlists → Add allowlist
-
-Use:
-
-https://raw.githubusercontent.com/YOUR_USERNAME/adguard-curated-allowlists/main/allowlist.txt
-
-AdGuard Home will automatically refresh the list every 24 hours.
-
-## Goals
-
-- Keep Samsung devices working
-- Preserve Google Play functionality
-- Keep Alexa operational
-- Avoid allowing advertising and tracking domains
-- Minimize false positives
+AdGuard Home → Filters → DNS allowlists → Add allowlist
