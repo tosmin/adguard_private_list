@@ -1,0 +1,2 @@
+# adguard_private_list
+adguard_private_list
