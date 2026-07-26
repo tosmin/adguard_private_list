@@ -41,3 +41,41 @@
 @@||amazonaws.com^
 @@||media-amazon.com^
 @@||alexa.amazon.com^
+
+! --- STEAM WHITELIST ---
+@@||steampowered.com^
+@@||steamcommunity.com^
+@@||steamgames.com^
+@@||steamusercontent.com^
+@@||steamcontent.com^
+@@||steamstatic.com^
+@@||valveapi.com^
+
+! --- EPIC GAMES WHITELIST ---
+@@||epicgames.com^
+@@||unrealengine.com^
+@@||helpshift.com^
+
+! --- BATTLESTATE GAMES (ESCAPE FROM TARKOV) WHITELIST ---
+@@||battlestategames.com^
+@@||escapefromtarkov.com^
+@@||tarkov.com^
+! --- EASY ANTI-CHEAT (EAC) ---
+! Used by Apex Legends, Fortnite, Rust, Tarkov, etc.
+@@||easyanticheat.net^
+@@||easyanticheat.com^
+
+! --- BATTLEYE ---
+! Used by Escape from Tarkov, Rainbow Six Siege, Destiny 2, etc.
+@@||battleye.com^
+
+! --- RICOCHET (CALL OF DUTY) ---
+@@||demonware.net^
+@@||activision.com^
+
+! --- VALORANT VANGUARD ---
+@@||riotgames.com^
+
+! --- FACEIT AC ---
+@@||faceit.com^
+
