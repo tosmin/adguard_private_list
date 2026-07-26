@@ -76,6 +76,15 @@
 ! --- VALORANT VANGUARD ---
 @@||riotgames.com^
 
+! --- UBISOFT & UBISOFT CONNECT ---
+@@||ubisoft.com^
+@@||ubi.com^
+@@||uplay.com^
+@@||ubisoft-orbit.com^
+
+! --- UBISOFT ANTI-CHEAT (FAIRFIGHT) ---
+@@||gameblocks.com^
+
 ! --- FACEIT AC ---
 @@||faceit.com^
 
