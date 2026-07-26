@@ -9,6 +9,10 @@ Minimal allowlist for:
 - Google Play Services
 - Firebase notifications
 - Amazon Alexa devices
+- Steam
+- Epic
+- Escape from Tarkov
+- AntiCheat
 
 ## Installation
 
