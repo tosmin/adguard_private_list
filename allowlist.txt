@@ -88,3 +88,16 @@
 ! --- FACEIT AC ---
 @@||faceit.com^
 
+! Disney+ Allowlist
+@@||disneyplus.com^
+@@||disney-plus.net^
+@@||bamgrid.com^
+@@||disney.api.edge.bamgrid.com^
+@@||disneystreaming.com^
+@@||dssott.com^
+@@||disney.com^
+@@||go.com^
+@@||execute-api.us-east-1.amazonaws.com^
+@@||cloudfront.net^
+@@||akamaihd.net^
+@@||akadns.net^
