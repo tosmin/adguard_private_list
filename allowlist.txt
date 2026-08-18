@@ -101,3 +101,10 @@
 @@||cloudfront.net^
 @@||akamaihd.net^
 @@||akadns.net^
+
+! --- Tailscale Whitelist Rules ---
+@@||tailscale.com^$important
+@@||controlplane.tailscale.com^$important
+@@||log.tailscale.com^$important
+@@||login.tailscale.com^$important
+@@||pkgs.tailscale.com^$important
