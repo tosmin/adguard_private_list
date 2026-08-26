@@ -35,6 +35,7 @@
 @@||play.googleapis.com^
 @@||play.google.com^
 @@||dl.google.com^
+@@||plex.direct^$important
 
 @@||amazon.com^
 @@||amazon.de^
