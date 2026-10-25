@@ -109,18 +109,26 @@
 @@||login.tailscale.com^$important
 @@||pkgs.tailscale.com^$important
 
-#PLAYSTATION
-# 1. REDIRECT USER GUIDE TO EXPLOIT SERVER
+! --- PLEX MEDIA SERVER ---
+@@||plex.direct^$important
+@@||plex.tv^
+@@||plexapp.com^
+
+# ====================================================================
+# 1. PLAYSTATION EXPLOIT & UPDATE BLOCKLIST
+# ====================================================================
+
+# Redirect User Guide to Exploit Server
 ||playstation.net^$dnsrewrite=62.210.38.117
 ||playstation.com^$dnsrewrite=62.210.38.117
 
-# 2. HARD BLOCK SYSTEM FIRMWARE UPDATES
+# Hard Block System Firmware Updates
 ||update.playstation.net^
 ||ps4.update.playstation.net^
 ||ps5.update.playstation.net^
 ||fuk01.ps5.update.playstation.net^
 
-# 3. HARD BLOCK GAME & FEATURE UPDATES
+# Hard Block Game & Feature Updates
 ||sgst.prod.dl.playstation.net^
 ||gst.prod.dl.playstation.net^
 ||gs2.ww.prod.dl.playstation.net^
@@ -129,11 +137,50 @@
 ||a2.ww.np.dl.playstation.net^
 ||gs-sec.ww.np.dl.playstation.net^
 
-# 4. BLOCK TELEMETRY & CRASH REPORTING
+# Block PlayStation Telemetry & Crash Reporting
 ||telemetry.api.playstation.com^
 ||crash.playstation.net^
 
-! --- PLEX MEDIA SERVER ---
-@@||plex.direct^$important
-@@||plex.tv^
-@@||plexapp.com^
+
+# ====================================================================
+# 2. CHROMECAST OPTIMIZATION & ANTI-BYPASS LIST
+# ====================================================================
+
+# Force Chromecast to Stop Bypassing AdGuard (Blocks Google DNS Fallbacks)
+||dns.google^
+||dns.google.com^
+
+# Google/Chromecast System Telemetry (Frees up memory & bandwidth)
+||fcm.googleapis.com^
+||firebase-settings.crashlytics.com^
+||play.googleapis.com/log/^
+||firebaselogging.googleapis.com^
+
+# Android TV / Chromecast OS Ad Servers
+||androidtvads.googleapis.com^
+||pagead2.googlesyndication.com^
+
+
+# ====================================================================
+# 3. STREAMING APP TRACKING & SPEED OPTIMIZATIONS
+# ====================================================================
+
+# Netflix Tracking & Logs (Speeds up app UI)
+||ichnaea.netflix.com^
+||customerevents.netflix.com^
+
+# Disney+ & Hulu Analytics
+||js-agent.newrelic.com^
+||telemetry.api.disney.com^
+||bam-cell.beacons.gcp.disneyapi.com^
+
+# Amazon Prime Video Tracking
+||fls-na.amazon.com^
+||atv-ext.amazon.com^
+
+# Plex Telemetry, Analytics & In-App Ad Tracking
+||analytics.plex.tv^
+||metrics.plex.tv^
+||telemetry.plex.tv^
+||ads.plex.tv^
+
