@@ -1,0 +1,96 @@
+
+! ================================================================
+! 1. ANDROID TV / CHROMECAST - advertising
+! ================================================================
+||androidtvads.googleapis.com^
+||pagead2.googlesyndication.com^
+!
+! Do NOT block fcm.googleapis.com or play.googleapis.com globally.
+! FCM is used for push notifications; Google Play is a core service.
+! /log/ is a URL path, so play.googleapis.com/log/ cannot be
+! selectively blocked by AdGuard Home's DNS filtering.
+!
+! ================================================================
+! 2. NETFLIX - analytics (may need review if app malfunctions)
+! ================================================================
+||ichnaea.netflix.com^
+||customerevents.netflix.com^
+!
+! ================================================================
+! 3. DISNEY+ - selected telemetry
+! ================================================================
+||telemetry.api.disney.com^
+||bam-cell.beacons.gcp.disneyapi.com^
+||js-agent.newrelic.com^
+!
+! js-agent.newrelic.com is shared with other sites/apps: if a service
+! needs it, comment out the rule and retest.
+!
+! ================================================================
+! 4. AMAZON - selected tracking
+! ================================================================
+||fls-na.amazon.com^
+!
+! ================================================================
+! 5. PLEX - telemetry (not Plex authentication / media streaming)
+! ================================================================
+||analytics.plex.tv^
+||metrics.plex.tv^
+||telemetry.plex.tv^
+!
+! NOTE: Do not block ads.plex.tv by default. Plex's free ad-supported
+! Live TV / movies may require advertising infrastructure.
+!
+! ================================================================
+! 6. OPTIONAL: Additional logging / diagnostics (DISABLED)
+! ================================================================
+! These are COMMENTED OUT. Enable one at a time only after testing.
+! ||firebase-settings.crashlytics.com^
+! ||firebaselogging.googleapis.com^
+! ||atv-ext.amazon.com^
+! ||ads.plex.tv^
+!
+! ================================================================
+! 7. OPTIONAL: Google DNS hostnames (DISABLED)
+! ================================================================
+! DNS blocking these hostnames alone cannot stop hardcoded DNS IPs or
+! encrypted DNS (DoH/DoT) bypass. Use router/firewall controls for that.
+! ||dns.google^
+! ||dns.google.com^
+!
+! ================================================================
+! 8. OPTIONAL: PLAYSTATION / PS4 FIRMWARE UPDATES (DISABLED)
+! ================================================================
+! WARNING: Never enable these globally if other consoles use this DNS.
+! First add your own PS4 as an AdGuard Home persistent client named
+! PS4-Jailbreak, then uncomment ONLY the rules you intentionally need.
+! Client names are case-sensitive and must match your setup.
+!
+! Firmware updates (PS4 client only):
+! ||update.playstation.net^$client='PS4-Jailbreak'
+! ||ps4.update.playstation.net^$client='PS4-Jailbreak'
+!
+! Optional game/feature downloads: may BREAK legitimate downloads,
+! game updates, PSN features and online play; normally leave disabled.
+! ||sgst.prod.dl.playstation.net^$client='PS4-Jailbreak'
+! ||gst.prod.dl.playstation.net^$client='PS4-Jailbreak'
+! ||gs2.ww.prod.dl.playstation.net^$client='PS4-Jailbreak'
+! ||a0.ww.np.dl.playstation.net^$client='PS4-Jailbreak'
+! ||a1.ww.np.dl.playstation.net^$client='PS4-Jailbreak'
+! ||a2.ww.np.dl.playstation.net^$client='PS4-Jailbreak'
+! ||gs-sec.ww.np.dl.playstation.net^$client='PS4-Jailbreak'
+!
+! Optional PlayStation diagnostic endpoints, scoped to this PS4:
+! ||telemetry.api.playstation.com^$client='PS4-Jailbreak'
+! ||crash.playstation.net^$client='PS4-Jailbreak'
+!
+! PS5 update blocks deliberately NOT enabled for other devices:
+! ||ps5.update.playstation.net^$client='PS5-Offline'
+! ||fuk01.ps5.update.playstation.net^$client='PS5-Offline'
+!
+! REMOVED: playstation.net / playstation.com DNS rewrites to
+! 62.210.38.117. They affected entire PlayStation services,
+! redirected traffic to a third-party IP, and are not safe global rules.
+! Use an explicitly trusted per-device method instead if needed.
+!
+! END OF BLOCKLIST
