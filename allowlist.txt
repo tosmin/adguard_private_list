@@ -1,16 +1,13 @@
-! Title: Curated Samsung + Google + Amazon Allowlist
-! Version: 1.0.0
-! Expires: 1 day
 
+! ================================================================
+! 1. SAMSUNG - account, Galaxy Store, updates, SmartThings, Knox
+! ================================================================
 @@||account.samsung.com^
 @@||auth.samsung.com^
-@@||samsung.com^
 @@||sec.samsung.com^
 @@||samsungcloud.com^
-@@||api.samsungcloud.com^
 @@||samsungapps.com^
 @@||galaxy.store^
-@@||vas.samsungapps.com^
 @@||update.samsung.com^
 @@||fota.samsungmobile.com^
 @@||findmymobile.samsung.com^
@@ -18,31 +15,47 @@
 @@||smartthings.net^
 @@||iot.samsung.com^
 @@||push.samsungosp.com^
-@@||samsungosp.com^
 @@||knox.com^
 @@||knoxapis.com^
-
-@@||googleapis.com^
+!
+! Avoid blanket exceptions for samsung.com and samsungosp.com;
+! these are larger than required for the services listed above.
+!
+! ================================================================
+! 2. GOOGLE / ANDROID / CHROMECAST - Play Store, FCM, downloads
+! ================================================================
+@@||accounts.google.com^
+@@||play.google.com^
+@@||play.googleapis.com^
+@@||fcm.googleapis.com^
+@@||firebaseinstallations.googleapis.com^
+@@||iid.googleapis.com^
+@@||android.googleapis.com^
 @@||gstatic.com^
-@@||googleusercontent.com^
-@@||android.com^
 @@||gvt1.com^
 @@||gvt2.com^
 @@||clients.google.com^
-@@||connectivitycheck.gstatic.com^
 @@||mtalk.google.com^
-@@||fcm.googleapis.com^
-@@||play.googleapis.com^
-@@||play.google.com^
 @@||dl.google.com^
-
-@@||amazon.com^
+!
+! connectivitycheck.gstatic.com is covered by gstatic.com.
+! Do not block fcm.googleapis.com: it is used for push messaging.
+! Avoid blanket exceptions for googleapis.com / googleusercontent.com.
+!
+! ================================================================
+! 3. AMAZON / ALEXA / PRIME - usable without AWS-wide exemptions
+! ================================================================
 @@||amazon.de^
-@@||amazonaws.com^
+@@||amazon.com^$denyallow=fls-na.amazon.com
 @@||media-amazon.com^
-@@||alexa.amazon.com^
-
-! --- STEAM WHITELIST ---
+!
+! The amazon.com rule covers alexa.amazon.com too.
+! fls-na.amazon.com remains blockable in the companion blocklist.
+! Never allow all of amazonaws.com solely for Prime Video.
+!
+! ================================================================
+! 4. STEAM / VALVE
+! ================================================================
 @@||steampowered.com^
 @@||steamcommunity.com^
 @@||steamgames.com^
@@ -50,137 +63,67 @@
 @@||steamcontent.com^
 @@||steamstatic.com^
 @@||valveapi.com^
-
-! --- EPIC GAMES WHITELIST ---
+!
+! ================================================================
+! 5. EPIC / UNREAL ENGINE
+! ================================================================
 @@||epicgames.com^
 @@||unrealengine.com^
-@@||helpshift.com^
-
-! --- BATTLESTATE GAMES (ESCAPE FROM TARKOV) WHITELIST ---
+! helpshift.com omitted: cross-service support platform; allow only if needed.
+!
+! ================================================================
+! 6. ESCAPE FROM TARKOV / BATTLESTATE
+! ================================================================
 @@||battlestategames.com^
 @@||escapefromtarkov.com^
 @@||tarkov.com^
-! --- EASY ANTI-CHEAT (EAC) ---
-! Used by Apex Legends, Fortnite, Rust, Tarkov, etc.
+!
+! ================================================================
+! 7. ANTI-CHEAT / LAUNCHERS
+! ================================================================
 @@||easyanticheat.net^
 @@||easyanticheat.com^
-
-! --- BATTLEYE ---
-! Used by Escape from Tarkov, Rainbow Six Siege, Destiny 2, etc.
 @@||battleye.com^
-
-! --- RICOCHET (CALL OF DUTY) ---
 @@||demonware.net^
 @@||activision.com^
-
-! --- VALORANT VANGUARD ---
 @@||riotgames.com^
-
-! --- UBISOFT & UBISOFT CONNECT ---
 @@||ubisoft.com^
 @@||ubi.com^
 @@||uplay.com^
 @@||ubisoft-orbit.com^
-
-! --- UBISOFT ANTI-CHEAT (FAIRFIGHT) ---
 @@||gameblocks.com^
-
-! --- FACEIT AC ---
 @@||faceit.com^
-
-! Disney+ Allowlist
+!
+! ================================================================
+! 8. DISNEY+ - playback, DRM, account services
+! ================================================================
 @@||disneyplus.com^
 @@||disney-plus.net^
 @@||bamgrid.com^
-@@||disney.api.edge.bamgrid.com^
 @@||disneystreaming.com^
 @@||dssott.com^
-@@||disney.com^
-@@||go.com^
-@@||execute-api.us-east-1.amazonaws.com^
-@@||cloudfront.net^
-@@||akamaihd.net^
-@@||akadns.net^
-
-! --- Tailscale Whitelist Rules ---
-@@||tailscale.com^$important
-@@||controlplane.tailscale.com^$important
-@@||log.tailscale.com^$important
-@@||login.tailscale.com^$important
-@@||pkgs.tailscale.com^$important
-
-! --- PLEX MEDIA SERVER ---
-@@||plex.direct^$important
-@@||plex.tv^
+@@||disney.com^$denyallow=telemetry.api.disney.com
+!
+! disney.api.edge.bamgrid.com is covered by bamgrid.com.
+! Avoid broad go.com, cloudfront.net, akamaihd.net, akadns.net,
+! and the shared execute-api.us-east-1.amazonaws.com API Gateway host.
+!
+! ================================================================
+! 9. TAILSCALE - coordination, login, updates and network use
+! ================================================================
+@@||tailscale.com^
+! Covers controlplane, login, log, and pkgs.tailscale.com.
+!
+! ================================================================
+! 10. PLEX - secure local connections, sign-in and media services
+! ================================================================
+@@||plex.direct^
+@@||plex.tv^$denyallow=analytics.plex.tv|metrics.plex.tv|telemetry.plex.tv
 @@||plexapp.com^
-
-# ====================================================================
-# 1. PLAYSTATION EXPLOIT & UPDATE BLOCKLIST
-# ====================================================================
-
-# Redirect User Guide to Exploit Server
-||playstation.net^$dnsrewrite=62.210.38.117
-||playstation.com^$dnsrewrite=62.210.38.117
-
-# Hard Block System Firmware Updates
-||update.playstation.net^
-||ps4.update.playstation.net^
-||ps5.update.playstation.net^
-||fuk01.ps5.update.playstation.net^
-
-# Hard Block Game & Feature Updates
-||sgst.prod.dl.playstation.net^
-||gst.prod.dl.playstation.net^
-||gs2.ww.prod.dl.playstation.net^
-||a0.ww.np.dl.playstation.net^
-||a1.ww.np.dl.playstation.net^
-||a2.ww.np.dl.playstation.net^
-||gs-sec.ww.np.dl.playstation.net^
-
-# Block PlayStation Telemetry & Crash Reporting
-||telemetry.api.playstation.com^
-||crash.playstation.net^
-
-
-# ====================================================================
-# 2. CHROMECAST OPTIMIZATION & ANTI-BYPASS LIST
-# ====================================================================
-
-# Force Chromecast to Stop Bypassing AdGuard (Blocks Google DNS Fallbacks)
-||dns.google^
-||dns.google.com^
-
-# Google/Chromecast System Telemetry (Frees up memory & bandwidth)
-||fcm.googleapis.com^
-||firebase-settings.crashlytics.com^
-||play.googleapis.com/log/^
-||firebaselogging.googleapis.com^
-
-# Android TV / Chromecast OS Ad Servers
-||androidtvads.googleapis.com^
-||pagead2.googlesyndication.com^
-
-
-# ====================================================================
-# 3. STREAMING APP TRACKING & SPEED OPTIMIZATIONS
-# ====================================================================
-
-# Netflix Tracking & Logs (Speeds up app UI)
-||ichnaea.netflix.com^
-||customerevents.netflix.com^
-
-# Disney+ & Hulu Analytics
-||js-agent.newrelic.com^
-||telemetry.api.disney.com^
-||bam-cell.beacons.gcp.disneyapi.com^
-
-# Amazon Prime Video Tracking
-||fls-na.amazon.com^
-||atv-ext.amazon.com^
-
-# Plex Telemetry, Analytics & In-App Ad Tracking
-||analytics.plex.tv^
-||metrics.plex.tv^
-||telemetry.plex.tv^
-||ads.plex.tv^
-
+!
+! plex.direct is important for secure LAN connections.
+! Analytics, metrics and telemetry are deliberately NOT whitelisted.
+! Plex ad endpoints are NOT blocked by default: free Plex streaming
+! services may use ads. DNS rules do NOT change Direct Play/bitrate.
+!
+! END OF ALLOWLIST
