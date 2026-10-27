@@ -87,14 +87,6 @@
 ! PS5 update blocks deliberately NOT enabled for other devices:
 ! ||ps5.update.playstation.net^$client='PS5-Offline'
 ! ||fuk01.ps5.update.playstation.net^$client='PS5-Offline'
-||fus01.ps4.update.playstation.net^
-||feu01.ps4.update.playstation.net^
-||fjp01.ps4.update.playstation.net^
-||fuk01.ps4.update.playstation.net^
-||dus01.ps4.update.playstation.net^
-||deu01.ps4.update.playstation.net^
-||djp01.ps4.update.playstation.net^
-||duk01.ps4.update.playstation.net^
 !
 ! REMOVED: playstation.net / playstation.com DNS rewrites to
 ! 62.210.38.117. They affected entire PlayStation services,
